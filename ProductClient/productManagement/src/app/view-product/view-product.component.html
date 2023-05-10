@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 d-flex " *ngFor="let e of prod">
+            <div class="card m-2 bg-dark bg-opacity-50" style="width: 18rem;">
+                <!-- <img class="card-img-top" [src]="e.imagePath" alt="Card image cap"> -->
+                <div class="card-body">
+                     <h5 class="card-title text-white">{{e.name}} [{{e.id}}]</h5>
+                    <p class="card-text text-white">Price: {{e.price}}</p>
+                    <p class="card-text text-white">Quantity: {{e.quantity}}</p>
+                    <a [routerLink]="['/detail',e.id]" class="btn btn-success m-1">Details</a>
+                    <a [routerLink]="['/update',e.id]" class="btn btn-warning m-1">Update</a>
+                    <!-- <button (click)="delete($event)" class="btn btn-primary m-1" [value]="e.id">Delete</button> -->
+                    <a [routerLink]="['/delete',e.id]" class="btn btn-danger m-1">Delete</a>
+                    <!-- <p class="text-danger" *ngIf="e.expDate>mydate"> !!Expired!!</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+hello

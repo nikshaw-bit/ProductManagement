@@ -1,0 +1,33 @@
+<div *ngIf="isDeleted===true" class="text-white">
+    <h3>Product Deleted Successfully</h3>
+    <h3>{{prod.name}}</h3>
+<table>
+    <tr>
+        <td>ID: </td>
+        <td>{{prod.id}}</td>
+    </tr>
+    <tr>
+        <td>Price: </td>
+        <td>{{prod.price}}</td>
+    </tr>
+    <tr>
+        <td>Quantity: </td>
+        <td>{{prod.quantity}}</td>
+    </tr>
+    <tr>
+        <td>Manufactured Date: </td>
+        <td>{{prod.mfgDate|date}}</td>
+    </tr>
+    <tr>
+        <td>Expiry Date: </td>
+        <td>{{prod.expDate|date}}</td>
+    </tr>
+    <tr>
+        <td>Last Updated </td>
+        <td>{{prod.modifiedDate|date}}</td>
+    </tr>
+</table>
+<div>
+    <button class="btn btn-info" routerLink="/view">Back</button>
+</div>
+</div>

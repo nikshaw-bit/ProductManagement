@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <form class="border border-3 p-4 bg-black bg-opacity-50 text-white" [formGroup]="productForm" (ngSubmit)="register()">
+                <h1 class="text-center">Product Registration Form</h1>
+                <div class="mb-3">
+                    <label class="form-label">Product Name:</label>
+                    <input formControlName="name" type="text" class="form-control rounded-5"
+                        [class.is-invalid]="name.invalid&&name.touched">
+                    <div *ngIf="name.invalid && name.touched" class="text-danger">
+                        <div *ngIf="name.errors?.['required']">
+                            ProductName is required
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Product Price:</label>
+                    <input formControlName="price" type="text" class="form-control rounded-5"
+                        [class.is-invalid]="price.invalid && price.touched">
+                    <div *ngIf="price.invalid && price.touched" class="text-danger">
+                        <div *ngIf="price.errors?.['required']">
+                            Price is required
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Product Quanity:</label>
+                    <input formControlName="quantity" type="text" class="form-control rounded-5"
+                        [class.is-invalid]="quantity.invalid && quantity.touched">
+                    <div *ngIf="quantity.invalid && quantity.touched" class="text-danger">
+                        <div *ngIf="quantity.errors?.['required']">
+                            Quantity is required
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Manufacture Date:</label>
+                    <input formControlName="mfgDate" type="date" class="form-control rounded-5"
+                        [class.is-invalid]="mfgDate.invalid && mfgDate.touched">
+                    <div *ngIf="mfgDate.invalid && mfgDate.touched" class="text-danger">
+                        <div *ngIf="mfgDate.errors?.['required']">
+                            Manufactured Date is required
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Expiry Date:</label>
+                    <input formControlName="expDate" type="date" class="form-control rounded-5"
+                        [class.is-invalid]="expDate.invalid && expDate.touched">
+                    <div *ngIf="expDate.invalid && expDate.touched" class="text-danger">
+                        <div *ngIf="expDate.errors?.['required']">
+                            Expiry Date is required
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" [disabled]="productForm.invalid" class="btn btn-primary">Submit</button>
+                    <!-- <button type="submit" class="btn btn-primary rounded-5">ADD</button> -->
+                </div>
+                <h3 class="text-white" *ngIf="id>0">Adding Product successfull.</h3>
+            </form>
+        </div>
+    </div>
+</div>

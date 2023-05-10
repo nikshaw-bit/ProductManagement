@@ -1,0 +1,51 @@
+package com.deloitte.productManagement.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.deloitte.productManagement.entity.Product;
+import com.deloitte.productManagement.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+	ProductRepository repository;
+
+	@Override
+	public List<Product> getAll() {
+		return repository.findAll();
+	}
+
+	@Override
+	public long addProduct(Product prod) {
+		repository.save(prod);
+		return prod.getId();
+	}
+
+	@Override
+	public Product getById(long id) {
+		return repository.findById(id).orElse(null);
+	}
+
+	@Override
+	public long updateProduct(Product prod) {
+		repository.save(prod);
+		return prod.getId();
+	}
+
+	@Override
+	public Product deleteById(long id) {
+		Product prod=repository.findById(id).orElse(null);
+		repository.deleteById(id);
+		return prod;
+	}
+
+	@Override
+	public List<Product> getProductBetween(int start, int end) {
+		return repository.findByPriceBetween(start,end);
+	}
+
+}

@@ -1,0 +1,76 @@
+<div id="carouselExampleControls" 
+class="carousel offset-1 slide mt-5 text-white bg-dark bg-opacity-50" 
+data-bs-ride="carousel" style="width:1000px;height:1000px;">
+    <div class="carousel-inner">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h3 class="text-center">Credits</h3>
+                <table class="offset-2">
+                    <tr>
+                        <th>Developer Name: </th>
+                        <td> Nikhil Kumar Shaw</td>
+                    </tr>
+                    <tr>
+                        <th>Organisation Name: </th>
+                        <td> Deloitte India Pvt. Limited</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Assignment: </th>
+                        <td>{{myDate|date}}</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Submission: </th>
+                        <td>{{subDate|date}}</td>
+                    </tr>
+                    <tr>
+                        <th>Mentor: </th>
+                        <td>Simant Setu</td>
+                    </tr>
+                    <tr>
+                        <th>Remark: </th>
+                        <td>Yet to be given :-)</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="carousel-item rounded-3" *ngFor="let prod of prod">
+                <h3 class="text-center">{{prod.name}}</h3>
+                <table class="offset-2">
+                    <tr>
+                        <td>ID: </td>
+                        <td>{{prod.id}}</td>
+                    </tr>
+                    <tr>
+                        <td>Price: </td>
+                        <td>{{prod.price}}</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity: </td>
+                        <td>{{prod.quantity}}</td>
+                    </tr>
+                    <tr>
+                        <td>Manufactured Date: </td>
+                        <td>{{prod.mfgDate|date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Expiry Date: </td>
+                        <td>{{prod.expDate|date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Updated </td>
+                        <td>{{prod.modifiedDate|date}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
