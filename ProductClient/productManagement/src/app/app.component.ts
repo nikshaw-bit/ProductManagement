@@ -19,6 +19,8 @@ export class AppComponent {
   ifSearched:boolean=false;
   ifNull:boolean;
   prod:Product=new Product();
+
+  
   search(){
     this.ifSearched=true;
     this.id=Number(this.isEntered.value);
